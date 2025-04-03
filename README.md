@@ -20,29 +20,27 @@ Cryptography is a method of encrypting or transforming data into an unreadable f
 
 ---
 
-### Flow chart of Encryption Algorithm & Flow chart of Decyption Algorithm
-
-![Image = 250x250](https://github.com/user-attachments/assets/46f57c0a-01d3-4dfc-a7e4-46b7ea6de7dc)
-
-![Image](https://github.com/user-attachments/assets/820b1685-099e-4726-b9ca-f9787c477b73)
-
-
-
-Lab 1
+### Lab 1
 In this lab, the task is to decipher the given cipher text. The scheme used to encipher the text is substitution cipher, which substitute a different letter for each occurrence of the letter. It can be deciphered if a person knows the cipher key. However, a person can easily find the key using frequency analysis, which works on the fact that some of the letters are used more frequently in comparison to others especially in the English language. 
 
 Description:
 
-First the text is viewed in the terminal using cat command and by using the frequency analysis tool provided in the lab document. As a result, the most appeared letter is ‘t’. Which can represent the letter ‘e’, as it’s the most common letter in English language. Then using the trigram analysis of the text, it is found that ‘ect’ and ‘iem’ are the most common words in the given cipher. But we know that ‘t’ represent ‘e’ then ‘ect’ will be the word ‘the’. Additionally, the next most common word is ‘obs’, which represent ‘and’ when deciphered. Using this way allows for some of the words to be completed with missing characters and can be easily completed by guessing the remaining part. Below screenshot shows the frequency analysis of single letters, from the cipher text:
+Task: First the text is viewed in the terminal using cat command and by using the frequency analysis tool provided in the lab document. 
 
-![image](https://github.com/user-attachments/assets/167812b3-931e-47f6-9157-4283a6736bfa)
- 
- 
-Also, the next screenshot shows the trigram analysis of the text:
+Ans: As a result, the most appeared letter is ‘t’. Which can represent the letter ‘e’, as it’s the most common letter in English language. Then using the trigram analysis of the text, it is found that ‘ect’ and ‘iem’ are the most common words in the given cipher. But we know that ‘t’ represent ‘e’ then ‘ect’ will be the word ‘the’. Additionally, the next most common word is ‘obs’, which represent ‘and’ when deciphered. Using this way allows for some of the words to be completed with missing characters and can be easily completed by guessing the remaining part. 
+
+The screenshot below shows the frequency analysis of single letters, from the cipher text:
+
+![Screenshot 2025-04-03 at 11 02 09](https://github.com/user-attachments/assets/1de6691e-db83-4f03-b551-0588143c382b)
+
+Additionally, the next screenshot shows the trigram analysis of the text:
+
+![Screenshot 2025-04-03 at 11 02 18](https://github.com/user-attachments/assets/a1b2880a-be00-4b3f-82f6-a0801471d9f7)
 
 By using the ‘tr’ command, the letters can be replaced by the actual letters, as shown in the screenshot:
 
-![image](https://github.com/user-attachments/assets/e398eed4-67fc-486a-b865-a16a6f8c9c96)
+![Screenshot 2025-04-03 at 11 05 39](https://github.com/user-attachments/assets/e3322d48-0941-4287-97db-26699fef9779)
+
 
 
 Different Encryption Modes:
