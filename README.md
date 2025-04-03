@@ -11,11 +11,9 @@ Cryptography is a method of encrypting or transforming data into an unreadable f
 ## Lab 1
 In this lab, the task is to decipher the given cipher text. The scheme used to encipher the text is substitution cipher, which substitute a different letter for each occurrence of the letter. It can be deciphered if a person knows the cipher key. However, a person can easily find the key using frequency analysis, which works on the fact that some of the letters are used more frequently in comparison to others especially in the English language. 
 
-Description:
-
 Task: First the text is viewed in the terminal using cat command and by using the frequency analysis tool provided in the lab document. 
 
-Ans: As a result, the most appeared letter is ‘t’. Which can represent the letter ‘e’, as it’s the most common letter in English language. Then using the trigram analysis of the text, it is found that ‘ect’ and ‘iem’ are the most common words in the given cipher. But we know that ‘t’ represent ‘e’ then ‘ect’ will be the word ‘the’. Additionally, the next most common word is ‘obs’, which represent ‘and’ when deciphered. Using this way allows for some of the words to be completed with missing characters and can be easily completed by guessing the remaining part. 
+As a result, the most appeared letter is ‘t’. Which can represent the letter ‘e’, as it’s the most common letter in English language. Then using the trigram analysis of the text, it is found that ‘ect’ and ‘iem’ are the most common words in the given cipher. But we know that ‘t’ represent ‘e’ then ‘ect’ will be the word ‘the’. Additionally, the next most common word is ‘obs’, which represent ‘and’ when deciphered. Using this way allows for some of the words to be completed with missing characters and can be easily completed by guessing the remaining part. 
 
 The screenshot below shows the frequency analysis of single letters, from the cipher text:
 
@@ -34,7 +32,7 @@ AES-128-CBC:
 
 The file plain.txt is encrypted using the KEY and IV, as shown in the screenshot:
 
- ![Screenshot 2025-04-03 at 11 18 10](https://github.com/user-attachments/assets/a1723552-4261-42ea-8a18-5d27af2e461c)
+![Screenshot 2025-04-03 at 11 18 10](https://github.com/user-attachments/assets/a1723552-4261-42ea-8a18-5d27af2e461c)
 
 
 -BF-CBC:
@@ -77,7 +75,7 @@ To conclude with this image, the data is completely masked, and we cannot tell a
 
 Random numbers are always required for local key generation and using the best possible ways to get these keys is very important because the information cannot be made as secure as it needs to be. In this lab we will learn wrong way of generating a key and find the problems that can cause problems, as well as the best practices for generating a more secure random key generation.
 
-Description:
+##### Result:
 
 The code is copied to the VM and saved as task1.c 
 
@@ -100,7 +98,6 @@ The following command is used to watch the output of /proc/sys/kernel/random/ent
 
 ![Screenshot 2025-04-03 at 11 48 27](https://github.com/user-attachments/assets/02eb5a8b-359b-4ec6-8d11-674ff75260ba)
 
-
 After observing different operations to test the entropy, it is observed that opening large files and browsing webpages, increases the entropy. While mouse movement has a significant role in increasing the available entropy, because it uses physical world data.
 
 #### 2.3 Task:
@@ -117,7 +114,7 @@ When all the data is displayed on the terminal the pool gets empty and is blocke
 
 In this lab our task is to create two files with some prefix text, similarly to both files, is to test that whether md5 is collision-resistive or not. 
 
-Description:
+##### Result:
 
 To demonstrate the attack, we will use the tool md5collgen. This tool requires a prefix file to create two output files, as shown:
 
@@ -141,8 +138,9 @@ In conclusion this lab proves that md5 hashes are not collision-resistive and al
 
 The purpose of this lab is to demonstrate the use of RSA public key encryption and its usefulness in checking the authenticity of a message. It also demonstrates the results when a signature is corrupted or changed by someone.
 
-Description:
-In this lab we will focus on the following tasks:
+##### Result:
+
+In this lab I will focus on the following tasks:
 •	Derive the private key
 •	Encrypting a message
 •	Decrypting a message
