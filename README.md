@@ -2,21 +2,17 @@
 
 In this project, I will be showing how I was able to apply my cryptography skills with the labs provided.
 
-# Table of Contents
+## Table of Contents
 
 - [Introduction](#Introductuon)
 - [Lab1](#lab1)  
-  - [Description for Lab 1](description-for-lab-1)
 - [Lab2](#lab2)  
-  - [Description for Lab 2](description-for-lab-2)
 - [Lab3](#lab3)  
-  - [Description for Lab 3](description-for-lab-3)
 - [Lab4](#lab4)  
-  - [Description for Lab 1](description-for-lab-4)  
-- [Initial Scan of Server Team Assets](#step-5-initial-scan-of-server-team-assets)
-- [Lab1](#lab1)  
-  - [Description for Lab 1](description-for-lab-1)  
+- [Conclusion](#conclusion)
 
+
+<img src="image.png" width="200" height="200">
 
 
 ### Introduction
