@@ -12,14 +12,11 @@ In this project, I will be showing how I was able to apply my cryptography skill
 - [Conclusion](#conclusion)
 
 
-<img src="image.png" width="200" height="200">
-
-
 ### Introduction
 
 Cryptography is a method of encrypting or transforming data into an unreadable format known as cipher text. Cryptography's urgent objective is to discover innovative techniques for producing cryptographic keys at all times. Cryptographers are continually refining and exploring for new ways for generating cryptographic keys in order to successfully accomplish this assignment. This report will focus on labs 1- 4 and I will be focusing on Secret Key Encryption, Pseudo Random Number Generation, MD5 Collision Attack and RSA Public Key Encryption & Signature throughout this report. All these labs were completed on Oracle Box Virtual Machines which will demonstrating all my work I completed throughout this assignment.
 
-![image](https://github.com/user-attachments/assets/167812b3-931e-47f6-9157-4283a6736bfa)
+![image = 250x250](https://github.com/user-attachments/assets/167812b3-931e-47f6-9157-4283a6736bfa) 
 
 ---
 
