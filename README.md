@@ -2,16 +2,6 @@
 
 In this project, I will be showing how I was able to apply my cryptography skills with the labs provided.
 
-## Table of Contents
-
-- [Introduction](#Introductuon)
-- [Lab1](#lab1)  
-- [Lab2](#lab2)  
-- [Lab3](#lab3)  
-- [Lab4](#lab4)  
-- [Conclusion](#conclusion)
-
-
 ### Introduction
 
 Cryptography is a method of encrypting or transforming data into an unreadable format known as cipher text. Cryptography's urgent objective is to discover innovative techniques for producing cryptographic keys at all times. Cryptographers are continually refining and exploring for new ways for generating cryptographic keys in order to successfully accomplish this assignment. This report will focus on labs 1- 4 and I will be focusing on Secret Key Encryption, Pseudo Random Number Generation, MD5 Collision Attack and RSA Public Key Encryption & Signature throughout this report. All these labs were completed on Oracle Box Virtual Machines which will demonstrating all my work I completed throughout this assignment.
@@ -39,7 +29,6 @@ By using the ‘tr’ command, the letters can be replaced by the actual letters
 
 ![Screenshot 2025-04-03 at 11 05 39](https://github.com/user-attachments/assets/e3322d48-0941-4287-97db-26699fef9779)
 
-
 Different Encryption Modes:
 AES-128-CBC:
 
@@ -52,7 +41,6 @@ The file plain.txt is encrypted using the KEY and IV, as shown in the screenshot
 The file plain.txt is encrypted using a salt, password prompt also appears on the terminal during encryption:
 
  ![Screenshot 2025-04-03 at 11 18 36](https://github.com/user-attachments/assets/23debfb7-70bb-4f14-9ffc-07e8aacfee40)
-
 
 AES-256-CBC:
 
@@ -85,7 +73,7 @@ To conclude with this image, the data is completely masked, and we cannot tell a
 
 ## Lab 2
 
-2.1 Task:
+#### 2.1 Task:
 
 Random numbers are always required for local key generation and using the best possible ways to get these keys is very important because the information cannot be made as secure as it needs to be. In this lab we will learn wrong way of generating a key and find the problems that can cause problems, as well as the best practices for generating a more secure random key generation.
 
@@ -106,7 +94,7 @@ Next the srand () function is commented out and the program is compiled and exec
 As a result, the srand() function is not contributing its part in the output, which shows same output each time the program is executed. Because of this, the srand() function is useful in making the output more random in case using it as a key for encryption.
 
 
-2.2 Task:
+#### 2.2 Task:
 
 The following command is used to watch the output of /proc/sys/kernel/random/entropy_avail continuously on the terminal, as shown:
 
@@ -115,7 +103,7 @@ The following command is used to watch the output of /proc/sys/kernel/random/ent
 
 After observing different operations to test the entropy, it is observed that opening large files and browsing webpages, increases the entropy. While mouse movement has a significant role in increasing the available entropy, because it uses physical world data.
 
-2.3 Task:
+#### 2.3 Task:
 
 In this task the random pool is being observed in real-time, which resides at the location /dev/random, and the output is displayed on the terminal after converting it into hex dump:
 
@@ -161,7 +149,7 @@ In this lab we will focus on the following tasks:
 •	Signing a message
 •	Verifying a signature
 
-Task 1: Derive the private key
+#### Task 1: Derive the private key
 
 	To derive the private key, we will use the program RSATask1.c, which takes the hexadecimal values of p and q and calculates the private key. The program is first compiled using:
 		gcc -o Task1 RSATask1.c -lcrypto
@@ -170,7 +158,7 @@ After running the program, following private key is generated, as shown:
 
 ![Screenshot 2025-04-03 at 11 55 20](https://github.com/user-attachments/assets/b03f0d6d-4975-4005-8151-051ed8d2b895)
 
-## Task 2: Encrypting a Message
+#### Task 2: Encrypting a Message
 
 The next step is to use the private key to encrypt the message. But the program needs hex code of the message, so the following python command is used to get it:
 
@@ -194,68 +182,58 @@ By converting the hex code to plain-text, we can view the actual message, as sho
 
 ![Screenshot 2025-04-03 at 12 01 07](https://github.com/user-attachments/assets/339c6e33-b0ee-4e24-91c4-321fa83ca2ac)
 
-
-### Task 4: Signing a message
+#### Task 4: Signing a message
 
 In this task we will generate a signature for the message, highlighted in the program RSATask4.c, as shown:
- 
+
+![Screenshot 2025-04-03 at 12 07 38](https://github.com/user-attachments/assets/15fae98a-a576-4b88-a88b-20abc95b5271)
+
 The program is compiled and executed in the terminal to get the signature, as shown:
- 
+
+![Screenshot 2025-04-03 at 12 07 49](https://github.com/user-attachments/assets/e581543d-9209-41ff-bc55-73b1229f449a)
 
 Next, we changed the message hex, such that to observe the effect on the signature. The last two characters of the hex code are changed from 21 to 2F, compiled the program, and executed again. Below screenshot shows the output signature of both the messages:
- 
 
-It shows that the signature changes with the change in message and thus keeps the integrity of the message.
-Task 5: Verifying a signature
+![Screenshot 2025-04-03 at 12 07 58](https://github.com/user-attachments/assets/e354985e-6bf4-468b-ab24-f22cb4d0c939)
 
-Now, the message is received by Bob, with the signature of Alice. To confirm that the message is from Alice, Bob will use Alice’s public key and check its authenticity. Open the program file RSATask5.c and add the above signature in place of S, as shown:
- 
- 
-Now compile and run then program to get the message in HEX:
+This indicates that the signature changes with the change in message and thus keeps the integrity of the message.
 
- 
+#### Task 5: Verifying a signature
 
-Then decode the hex to get the original plain text message:
+Now, the message is received by Bob, with the signature of Alice. To confirm that the message is from Alice, Bob will use Alice’s public key and check its authenticity. 
 
- 
+Open the program file RSATask5.c and add the above signature in place of S, as shown:
 
-It confirms that the signature is from Alice as we successfully got the message from the signature using Alice’s public key.
+![Screenshot 2025-04-03 at 12 11 19](https://github.com/user-attachments/assets/0ce0b4b0-e499-4301-9408-0d55a377a595)
 
-Now, if the signature is corrupted, such that the last byte changes from E6 to E5 then, recompiled the program and got the following result:
+To compile and run then program to get the message in HEX:
 
-  
+![Screenshot 2025-04-03 at 12 12 19](https://github.com/user-attachments/assets/1bb8ef69-51fd-48a2-8e83-8c89e639a357)
+
+To decode the hex to get the original plain text message:
+
+![Screenshot 2025-04-03 at 12 12 36](https://github.com/user-attachments/assets/858d9202-915b-4278-b95a-f50e2a4583c1)
+
+#### Crypto Labs are fun! 
+
+This confirms that the signature is from Alice as I successfully got the message from the signature using Alice’s public key.
+
+Now, if the signature is corrupted, such that the last byte changes from E6 to E5, then recompiled the program and got the following result:
+
+![Screenshot 2025-04-03 at 12 15 06](https://github.com/user-attachments/assets/9936a6ba-ab02-4baa-8cfc-3aa4b42f8eb3)
 
 The message is not in the proper hex format, and the output is also not understandable:
 
- 
+![Screenshot 2025-04-03 at 12 15 29](https://github.com/user-attachments/assets/1f88f27d-90bd-4533-86f6-d2266c261e39)
 
-It proves that if any of the byte is changed in the signature, the whole message is changed and hence proves the authenticity of the message.
-Conclusion
+This verifys that if any of the byte is changed in the signature, the whole message is changed and hence proves the authenticity of the message.
 
-In conclusion, completing the given tasks within each of the 4 labs has been extremely beneficial in understanding how cryptography works. It has broadened my knowledge be exploring how a cipher suite is used extensively. This was done through Secret Key Encryption, Pseudo Random Number Generation, MD5 Collision Attack and RSA Public Key Encryption and Signature Lab. For example, it is evident that MD5 collision attacks is relevant in finding two different messages that give the same value. Additionally decrypting and encrypting messages are also crucial skills that need to be applied as seen in Fig. 1 and Fig. 2. It’s vital to be able to understand and apply these technical skills in the IT security industry. 
+---
 
+### Conclusion
 
+In conclusion, completing the given tasks within each of the 4 labs has been extremely beneficial in understanding how cryptography works. It has broadened my knowledge be exploring how a cipher suite is used extensively. This was done through Secret Key Encryption, Pseudo Random Number Generation, MD5 Collision Attack and RSA Public Key Encryption and Signature Lab. For example, it is evident that MD5 collision attacks is relevant in finding two different messages that give the same value. Additionally, decrypting and encrypting messages are also crucial skills that need to be applied. It’s vital to be able to understand and apply these technical skills in my opinion. 
 
-
-
-
-
- 
-Appendices:
-
-Fig 1:
-
- 
-
-
-
-
-
-
-
-
-
-Fig 2:
 
  
 
