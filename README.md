@@ -63,15 +63,15 @@ The screenshot below highlights the output of the encryption using ECB:
 
 ![Screenshot 2025-04-03 at 11 19 57](https://github.com/user-attachments/assets/d0c6ef1c-a45d-4ea8-8e4d-6f69ed6ed57f)
  
-Furterhmore, the original header of the pic_original.bmp is replaced by the bogus header of the encrypted file. The screenshot below shows the process:
+Furterhmore, the original header of the pic_original.bmp is replaced by the bogus header of the encrypted file. 
 
 ![Screenshot 2025-04-03 at 11 21 41](https://github.com/user-attachments/assets/47041d2c-ad1f-481d-a5ba-e4a663fc2fe2)
 
-As a result, the encrypted file can be viewed by any image viewer. As shown in the screenshot:
+As a result, the encrypted file can be viewed by any image viewer. 
 
  ![Screenshot 2025-04-03 at 11 23 19](https://github.com/user-attachments/assets/bac14543-d8f6-4540-ad97-052a0b77a6e6)
 
-It can identify that the image is still understandable, even after encryption. Next, we will use CBC encryption for the same image.
+It can identify that the image is still understandable, even after encryption. In addition to this, we will use CBC encryption for the same image.
 
 ![Screenshot 2025-04-03 at 11 24 04](https://github.com/user-attachments/assets/5245b278-7213-4711-88e9-12b52ad2babc)
 
@@ -79,55 +79,53 @@ This will allow us to view the encrypted image, which is new_cbc.bmp:
 
 ![Screenshot 2025-04-03 at 11 25 26](https://github.com/user-attachments/assets/b145bcc7-16fb-49ed-81a8-15359fc97593)
 
-To conclude with this image, the data is completely masked, and we cannot tell anything about the image. So, CBC encryption is preferred over ECB encryption, which still leaks some information of the image.
+To conclude with this image, the data is completely masked, and we cannot tell anything about the image. Due to this, CBC encryption is preferred over ECB encryption, which still leaks some information of the image.
 
 ---
 
 ## Lab 2
+
+2.1 Task:
 
 Random numbers are always required for local key generation and using the best possible ways to get these keys is very important because the information cannot be made as secure as it needs to be. In this lab we will learn wrong way of generating a key and find the problems that can cause problems, as well as the best practices for generating a more secure random key generation.
 
 Description:
 
 The code is copied to the VM and saved as task1.c 
-It will then be compiled using GCC compiler and executed three times. As shown:
-  
 
-The output of the program shows the time function and its output with the srand() function. Which means that the output changes with the change in time. Different output for different time values. However, if a person knows the key generation time, he will be able to find the key, which makes the whole process to be cracked easily. 
+Moreover, will then be compiled using GCC compiler and executed three times. 
+
+![Screenshot 2025-04-03 at 11 43 41](https://github.com/user-attachments/assets/eb05aee3-fdfa-4368-932e-86b464189635)
+
+The output of the program shows the time function and its output with the srand() function. Which means that the output changes with the change in time. Different output for different time values. However, if a person knows the key generation time, they will be able to find the key, whichin turn will make the whole process easily cracked. 
+
 Next the srand () function is commented out and the program is compiled and executed again, as shown:
 
-  
+![Screenshot 2025-04-03 at 11 45 04](https://github.com/user-attachments/assets/0f7d6441-10a7-498b-9947-9cb9241bdb7f)
 
-This time the srand() function is not contributing its part in the output, which shows same output each time the program is executed. So, the srand() function is useful in making the output more random in case using it as a key for encryption.
+As a result, the srand() function is not contributing its part in the output, which shows same output each time the program is executed. Because of this, the srand() function is useful in making the output more random in case using it as a key for encryption.
 
 
-2.3 Task 3:
+2.2 Task:
 
 The following command is used to watch the output of /proc/sys/kernel/random/entropy_avail continuously on the terminal, as shown:
 
- 
+![Screenshot 2025-04-03 at 11 48 27](https://github.com/user-attachments/assets/02eb5a8b-359b-4ec6-8d11-674ff75260ba)
+
 
 After observing different operations to test the entropy, it is observed that opening large files and browsing webpages, increases the entropy. While mouse movement has a significant role in increasing the available entropy, because it uses physical world data.
 
-
-
-
-2.4 Task 4:
+2.3 Task:
 
 In this task the random pool is being observed in real-time, which resides at the location /dev/random, and the output is displayed on the terminal after converting it into hex dump:
 
- 
+![Screenshot 2025-04-03 at 11 49 25](https://github.com/user-attachments/assets/b19c8b65-5765-4029-8074-43da840f40b4)
 
 When all the data is displayed on the terminal the pool gets empty and is blocked, then by moving mouse and clicking on the screen increases the randomness. When the value reaches 63, the command displays another value on the screen by using the randomness from the pool. A hex dump displays 64 bytes of data, so as the decrease in the pool value.
 
+---
 
-
-
-
-
-
-
-Lab 3
+### Lab 3
 
 In this lab our task is to create two files with some prefix text, similarly to both files, is to test that whether md5 is collision-resistive or not. 
 
@@ -135,31 +133,23 @@ Description:
 
 To demonstrate the attack, we will use the tool md5collgen. This tool requires a prefix file to create two output files, as shown:
 
+![Screenshot 2025-04-03 at 11 50 15](https://github.com/user-attachments/assets/5060ff88-bcb4-4f92-a68b-6ed3724b3eaf)
  
-
 If we investigate the hashes of the files, these are the same for different files:
 
- 
+![Screenshot 2025-04-03 at 11 51 15](https://github.com/user-attachments/assets/aac82497-1c45-4fc3-933a-65a7c0255733)
 
 By opening each file using the hex editor ‘bless’, we can observe the binary data, as shown:
- 
+
+![Screenshot 2025-04-03 at 11 51 47](https://github.com/user-attachments/assets/b7ec7c86-5ec9-4edc-add4-4c75dd633787)
 
 Both the files contain the same prefix in the beginning of the file while some random data is present in the remaining part of the files, which makes the two files different. Furthermore, the hash must be different but still the hash of the files are same, which opposes the collision-resistance property and makes the hash vulnerable to attacks.
 
-Conclusion:
+In conclusion this lab proves that md5 hashes are not collision-resistive and allows attackers to use this vulnerability to crack md5 hashes relatively easy.
 
-This lab proves that md5 hashes are not collision-resistive and allows attackers to use this vulnerability to crack md5 hashes very easily.
+---
 
-
-
-
-
-
-
-
-
-
-Lab 4
+### Lab 4
 
 The purpose of this lab is to demonstrate the use of RSA public key encryption and its usefulness in checking the authenticity of a message. It also demonstrates the results when a signature is corrupted or changed by someone.
 
@@ -175,33 +165,37 @@ Task 1: Derive the private key
 
 	To derive the private key, we will use the program RSATask1.c, which takes the hexadecimal values of p and q and calculates the private key. The program is first compiled using:
 		gcc -o Task1 RSATask1.c -lcrypto
+  
 After running the program, following private key is generated, as shown:
 
- 
+![Screenshot 2025-04-03 at 11 55 20](https://github.com/user-attachments/assets/b03f0d6d-4975-4005-8151-051ed8d2b895)
 
-Task 2: Encrypting a Message
+## Task 2: Encrypting a Message
 
 The next step is to use the private key to encrypt the message. But the program needs hex code of the message, so the following python command is used to get it:
 
- 
+![Screenshot 2025-04-03 at 11 57 13](https://github.com/user-attachments/assets/57b6a5db-2703-45fd-bc6c-3600f3893c19)
 
 Now, this code will be replaced in the program RSATask2.c and recompiled, to get the encrypted message. The encrypted message is as shown:
 
- 
-Task 3: Decrypting a Message
+![Screenshot 2025-04-03 at 11 57 44](https://github.com/user-attachments/assets/00b62a6f-3083-43b8-8b2e-ed16525f1117)
+
+#### Task 3: Decrypting a Message
 
 In this task we will decrypt the message, that was encrypted in the last task. For this we will replace the encrypted message in the file RSATask3.c and compile it. The following screenshot shows the replaced characters:
 
- 
+![Screenshot 2025-04-03 at 11 58 51](https://github.com/user-attachments/assets/f5b98624-3409-49e1-9e84-b51e7237ac28)
 
-Next, I execute the file Task3, and the decrypted message will be displayed as shown:
+Due to this, I will now execute the file Task3, and the decrypted message will be displayed as shown:
 
- 
+![Screenshot 2025-04-03 at 12 00 12](https://github.com/user-attachments/assets/a5902974-de62-4f02-b09d-e4c6c3019984)
 
 By converting the hex code to plain-text, we can view the actual message, as shown:
 
- 
-Task 4: Signing a message
+![Screenshot 2025-04-03 at 12 01 07](https://github.com/user-attachments/assets/339c6e33-b0ee-4e24-91c4-321fa83ca2ac)
+
+
+### Task 4: Signing a message
 
 In this task we will generate a signature for the message, highlighted in the program RSATask4.c, as shown:
  
