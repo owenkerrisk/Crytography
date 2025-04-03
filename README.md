@@ -22,7 +22,7 @@ Cryptography is a method of encrypting or transforming data into an unreadable f
 
 ### Flow chart of Encryption Algorithm & Flow chart of Decyption Algorithm
 
-![Image](https://github.com/user-attachments/assets/46f57c0a-01d3-4dfc-a7e4-46b7ea6de7dc)
+![Image = 250x250](https://github.com/user-attachments/assets/46f57c0a-01d3-4dfc-a7e4-46b7ea6de7dc)
 
 ![Image](https://github.com/user-attachments/assets/820b1685-099e-4726-b9ca-f9787c477b73)
 
