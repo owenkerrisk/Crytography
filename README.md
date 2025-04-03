@@ -1,4 +1,4 @@
-# TLS Cipher Suites
+![Screenshot 2025-04-03 at 11 05 39](https://github.com/user-attachments/assets/046321fc-5467-4057-ac3c-47907d64158e)![Screenshot 2025-04-03 at 11 02 18](https://github.com/user-attachments/assets/ccb023b6-6f9c-49af-92f0-443c04889511)# TLS Cipher Suites
 
 In this project, I will be showing how I was able to apply my cryptography skills with the labs provided.
 
@@ -16,11 +16,9 @@ In this project, I will be showing how I was able to apply my cryptography skill
 
 Cryptography is a method of encrypting or transforming data into an unreadable format known as cipher text. Cryptography's urgent objective is to discover innovative techniques for producing cryptographic keys at all times. Cryptographers are continually refining and exploring for new ways for generating cryptographic keys in order to successfully accomplish this assignment. This report will focus on labs 1- 4 and I will be focusing on Secret Key Encryption, Pseudo Random Number Generation, MD5 Collision Attack and RSA Public Key Encryption & Signature throughout this report. All these labs were completed on Oracle Box Virtual Machines which will demonstrating all my work I completed throughout this assignment.
 
-![image = 250x250](https://github.com/user-attachments/assets/167812b3-931e-47f6-9157-4283a6736bfa) 
-
 ---
 
-### Lab 1
+## Lab 1
 In this lab, the task is to decipher the given cipher text. The scheme used to encipher the text is substitution cipher, which substitute a different letter for each occurrence of the letter. It can be deciphered if a person knows the cipher key. However, a person can easily find the key using frequency analysis, which works on the fact that some of the letters are used more frequently in comparison to others especially in the English language. 
 
 Description:
@@ -42,57 +40,50 @@ By using the ‘tr’ command, the letters can be replaced by the actual letters
 ![Screenshot 2025-04-03 at 11 05 39](https://github.com/user-attachments/assets/e3322d48-0941-4287-97db-26699fef9779)
 
 
-
 Different Encryption Modes:
 AES-128-CBC:
 
 The file plain.txt is encrypted using the KEY and IV, as shown in the screenshot:
 
- 
+ ![Screenshot 2025-04-03 at 11 18 10](https://github.com/user-attachments/assets/a1723552-4261-42ea-8a18-5d27af2e461c)
+
 
 -BF-CBC:
 The file plain.txt is encrypted using a salt, password prompt also appears on the terminal during encryption:
 
- 
+ ![Screenshot 2025-04-03 at 11 18 36](https://github.com/user-attachments/assets/23debfb7-70bb-4f14-9ffc-07e8aacfee40)
+
 
 AES-256-CBC:
 
+ ![Screenshot 2025-04-03 at 11 19 01](https://github.com/user-attachments/assets/366aab6c-5382-4c51-a073-59d12020ff1e)
+
+In this task the pic_original.bmp is encrypted using ECB and CBC encryption. 
+The screenshot below highlights the output of the encryption using ECB:
+
+![Screenshot 2025-04-03 at 11 19 57](https://github.com/user-attachments/assets/d0c6ef1c-a45d-4ea8-8e4d-6f69ed6ed57f)
  
+Furterhmore, the original header of the pic_original.bmp is replaced by the bogus header of the encrypted file. The screenshot below shows the process:
 
-In this task the pic_original.bmp is encrypted using ECB and CBC encryption. The below screenshot shows the output of the encryption using ECB:
+![Screenshot 2025-04-03 at 11 21 41](https://github.com/user-attachments/assets/47041d2c-ad1f-481d-a5ba-e4a663fc2fe2)
 
- 
+As a result, the encrypted file can be viewed by any image viewer. As shown in the screenshot:
 
- 
-After this, the original header of the pic_original.bmp is replaced by the bogus header of the encrypted file. Below screenshot shows the process:
+ ![Screenshot 2025-04-03 at 11 23 19](https://github.com/user-attachments/assets/bac14543-d8f6-4540-ad97-052a0b77a6e6)
 
- 
+It can identify that the image is still understandable, even after encryption. Next, we will use CBC encryption for the same image.
 
-Now the encrypted file can be viewed by any image viewer. As shown in the screenshot:
+![Screenshot 2025-04-03 at 11 24 04](https://github.com/user-attachments/assets/5245b278-7213-4711-88e9-12b52ad2babc)
 
- 
+This will allow us to view the encrypted image, which is new_cbc.bmp:
 
-As a result, it can identify that the image is still understandable, even after encryption. Next, we will use CBC encryption for the same image.
- 
-Which we will then view the encrypted image, which is new_cbc.bmp:
+![Screenshot 2025-04-03 at 11 25 26](https://github.com/user-attachments/assets/b145bcc7-16fb-49ed-81a8-15359fc97593)
 
- 
+To conclude with this image, the data is completely masked, and we cannot tell anything about the image. So, CBC encryption is preferred over ECB encryption, which still leaks some information of the image.
 
-From this image, the data is completely masked, and we cannot tell anything about the image. So, CBC encryption is preferred over ECB encryption, which still leaks some information of the image.
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-Lab 2
+## Lab 2
 
 Random numbers are always required for local key generation and using the best possible ways to get these keys is very important because the information cannot be made as secure as it needs to be. In this lab we will learn wrong way of generating a key and find the problems that can cause problems, as well as the best practices for generating a more secure random key generation.
 
