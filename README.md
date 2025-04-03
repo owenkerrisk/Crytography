@@ -1,4 +1,4 @@
-![Screenshot 2025-04-03 at 11 05 39](https://github.com/user-attachments/assets/046321fc-5467-4057-ac3c-47907d64158e)![Screenshot 2025-04-03 at 11 02 18](https://github.com/user-attachments/assets/ccb023b6-6f9c-49af-92f0-443c04889511)# TLS Cipher Suites
+# TLS Cipher Suites
 
 In this project, I will be showing how I was able to apply my cryptography skills with the labs provided.
 
